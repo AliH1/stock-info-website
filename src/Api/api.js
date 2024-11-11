@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+const API_KEY=""; //copy paste api key here
 
 export const fetchChart = async (stockSymbol) => {
   try{
