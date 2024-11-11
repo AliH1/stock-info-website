@@ -1,0 +1,20 @@
+.search-bar-container input {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+}
+
+.search-bar-container button {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  background-color: white;
+}
+
+.search-bar-container button:hover {
+  background-color:#dddddd;
+}

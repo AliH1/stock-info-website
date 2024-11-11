@@ -1,0 +1,12 @@
+.chart-container {
+  padding: 2rem;
+  margin: 4rem 8rem;
+  margin-bottom: 0rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
+}
+
+.plot-header {
+  color: #3700B3;
+  margin: 0 4rem;
+}
