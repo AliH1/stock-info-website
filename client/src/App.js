@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import { fetchSymbols } from './Api/api';
+import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import StockChart from './components/StockChart';
 import StockStats from './components/StockStats';
@@ -10,12 +10,14 @@ function App() {
   const [symbolList, SetSymbolList] = useState([]);
   const [selectedSymbol, setSelectedSymbol] = useState('AMZN'); //default selection will be amazon stock
 
+  const fetchStockList = async() => {
+    const response = await axios.get("http://localhost:8080/api/stock-list");
+    console.log(response.data);
+    SetSymbolList(response.data);
+  }
+
   useEffect(() =>{
-    const fetchSymbolList = async () => {
-      const res = await fetchSymbols();
-      SetSymbolList(res);
-    }
-    fetchSymbolList();
+    fetchStockList();
   }, []);
 
   const handleSearch = (symbol) => {

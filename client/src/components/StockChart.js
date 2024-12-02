@@ -1,17 +1,17 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import Plot from 'react-plotly.js';
-import { fetchChart } from '../Api/api';
 import './StockChart.css';
 
 function StockChart(props){
   const [stockData, setStockData] = useState({});
 
   useEffect(() =>{
-    const fetchStockData = async () => {
-      const res = await fetchChart(props.stockSymbol);
-      setStockData(res);
+    const fetchStockInfo = async() => {
+      const response = await axios.get("http://localhost:8080/api/stock-data", { headers: { 'stock': `${props.stockSymbol}`}});
+      setStockData(response.data['historical']);
     }
-    fetchStockData();
+    fetchStockInfo();
   }, [props.stockSymbol]);
 
 
