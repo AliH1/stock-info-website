@@ -10,6 +10,6 @@ https://github.com/user-attachments/assets/b40f7771-e9e2-4891-af03-8f17881c9e81
 
 In order to run:
 1. clone repo
-2. npm i
-3. npm run DevStart (start server)
-4. npm start
+2. navigate to both client and server directory then 'npm i'
+3. 'npm run DevStart' in server directory
+4. 'npm start' in client directory
